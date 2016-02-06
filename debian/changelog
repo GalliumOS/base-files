@@ -1,3 +1,10 @@
+base-files (7.2ubuntu9-galliumos3) vivid-galliumos; urgency=medium
+
+  * Update /etc/os-release for GalliumOS Beta 2
+  * Experimentally test /etc/lsb-release "DISTRIB_DESCRIPTION"
+
+ -- reynhout <reynhout@galliumos.org>  Sat, 06 Feb 2016 17:14:05 +0000
+
 base-files (7.2ubuntu9-galliumos2) vivid; urgency=medium
 
   * /etc/issue{,.net} for GalliumOS Beta 2

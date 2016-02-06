@@ -1,9 +1,9 @@
 NAME="GalliumOS"
-VERSION="1.0 Beta1"
+VERSION="1.0beta2"
 ID=galliumos
 ID_LIKE=debian
-PRETTY_NAME="GalliumOS 1.0 Beta1"
+PRETTY_NAME="GalliumOS 1.0beta2"
 VERSION_ID="1.0"
 HOME_URL="https://galliumos.org/"
 SUPPORT_URL="https://galliumos.org/"
-BUG_REPORT_URL="http://github.com/galliumos/"
+BUG_REPORT_URL="http://github.com/GalliumOS/galliumos-distro/issues"
