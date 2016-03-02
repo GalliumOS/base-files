@@ -1,3 +1,10 @@
+base-files (7.2ubuntu9-galliumos4) vivid-galliumos; urgency=medium
+
+  * Update release info files for GalliumOS 1.0
+    - /etc/os-release /etc/lsb-release /etc/issue{,.net}
+
+ -- reynhout <reynhout@galliumos.org>  Wed, 02 Mar 2016 16:45:45 +0000
+
 base-files (7.2ubuntu9-galliumos3) vivid-galliumos; urgency=medium
 
   * Update /etc/os-release for GalliumOS Beta 2
