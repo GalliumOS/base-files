@@ -1,0 +1,40 @@
+--- a/etc/issue
++++ b/etc/issue
+@@ -1,2 +1,2 @@
+-Ubuntu Xenial Xerus (development branch) \n \l
++-GalliumOS 2.0 (development branch) \n \l
+ 
+--- a/etc/issue.net
++++ b/etc/issue.net
+@@ -1 +1 @@
+-Ubuntu Xenial Xerus (development branch)
++-GalliumOS 2.0 (development branch)
+--- a/etc/lsb-release
++++ b/etc/lsb-release
+@@ -1,4 +1,4 @@
+ DISTRIB_ID=Ubuntu
+ DISTRIB_RELEASE=16.04
+ DISTRIB_CODENAME=xenial
+-DISTRIB_DESCRIPTION="Ubuntu Xenial Xerus (development branch)"
++DISTRIB_DESCRIPTION="GalliumOS 2.0 (development branch)"
+--- a/etc/os-release
++++ b/etc/os-release
+@@ -1,10 +1,9 @@
+-NAME="Ubuntu"
+-VERSION="16.04 (Xenial Xerus)"
+-ID=ubuntu
++NAME="GalliumOS"
++VERSION="1.0"
++ID=galliumos
+ ID_LIKE=debian
+-PRETTY_NAME="Ubuntu 16.04"
+-VERSION_ID="16.04"
+-HOME_URL="http://www.ubuntu.com/"
+-SUPPORT_URL="http://help.ubuntu.com/"
+-BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+-UBUNTU_CODENAME=xenial
++PRETTY_NAME="GalliumOS 1.0"
++VERSION_ID="1.0"
++HOME_URL="https://galliumos.org/"
++SUPPORT_URL="https://galliumos.org/"
++BUG_REPORT_URL="http://github.com/GalliumOS/galliumos-distro/issues"
