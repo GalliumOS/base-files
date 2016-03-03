@@ -1,4 +1,4 @@
 DISTRIB_ID=Ubuntu
 DISTRIB_RELEASE=16.04
 DISTRIB_CODENAME=xenial
-DISTRIB_DESCRIPTION="GalliumOS 2.0 (development branch)"
+DISTRIB_DESCRIPTION="Ubuntu Xenial Xerus (development branch)"
