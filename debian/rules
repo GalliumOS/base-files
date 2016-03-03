@@ -11,6 +11,8 @@ ifeq ($(DEB_HOST_GNU_SYSTEM),gnu)
   OSNAME=GNU/Hurd
 endif
 
+BUILD_DATE := $(shell dpkg-parsechangelog -S Date)
+
 VENDORFILE = ubuntu
 
 VERSION = $(shell cat etc/debian_version)
@@ -35,7 +37,8 @@ binary-arch: build
 	cat debian/copyright.in | sed -e "s&#OSNAME#&$(OSNAME)&g" \
 		> $(docdir)/copyright
 	chmod 644 $(docdir)/copyright
-	sh debian/check-etc-profile-md5sum
+	sh debian/check-md5sum-etc profile
+	sh debian/check-md5sum-etc nsswitch.conf
 	sed -e "s/#VENDORFILE#/$(VENDORFILE)/g" debian/postinst.in \
 		> debian/tmp/DEBIAN/postinst
 	chmod 755 debian/tmp/DEBIAN/postinst
@@ -62,16 +65,22 @@ endif
 		> debian/tmp/etc/issue.net
 	sed -e "s&#OSNAME#&$(OSNAME)&g" etc/os-release \
 		> debian/tmp/etc/os-release
-	gzip -9 $(docdir)/changelog
+	mv debian/tmp/etc/os-release debian/tmp/usr/lib
+	ln -s ../usr/lib/os-release debian/tmp/etc/os-release
+	gzip -9n $(docdir)/changelog
 	cd debian/tmp && \
-		md5sum `find usr -type f` > DEBIAN/md5sums
+		find usr -type f ! -regex "DEBIAN/.*" -print0 |\
+		LC_ALL=C sort -z | xargs -0r md5sum > DEBIAN/md5sums
 	chown -R root:root debian/tmp
+	chmod -R u+w,go=rX debian/tmp
 	cd debian/tmp && chown root:staff   var/local
 	cd debian/tmp && chmod 755  `find . -type d`
 	cd debian/tmp && chmod 1777 `cat ../1777-dirs`
 	cd debian/tmp && chmod 2775 `cat ../2775-dirs`
 	cd debian/tmp && chmod 700 root
 	dpkg-gencontrol -pbase-files
+	find debian/tmp -newermt '$(BUILD_DATE)' -print0 |\
+		xargs -0r touch -h --date='$(BUILD_DATE)'
 	dpkg-deb --build -Zgzip debian/tmp ..
 
 binary-indep: build
@@ -89,5 +98,9 @@ binary-indep: build
 		../lsb-release-udeb_$(DEBVERSION)_all.udeb
 
 binary: binary-indep binary-arch
+
+build-arch: build
+
+build-indep: build
 
 .PHONY: binary binary-arch binary-indep clean

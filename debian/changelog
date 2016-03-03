@@ -1,34 +1,205 @@
-base-files (7.2ubuntu9-galliumos4) vivid-galliumos; urgency=medium
+base-files (9.4ubuntu3) xenial; urgency=medium
 
-  * Update release info files for GalliumOS 1.0
-    - /etc/os-release /etc/lsb-release /etc/issue{,.net}
+  * etc/os-release:
+    - add UBUNTU_CODENAME=xenial (LP: #1520154)
+      (having distro specific fields is ok according to the spec)
 
- -- reynhout <reynhout@galliumos.org>  Wed, 02 Mar 2016 16:45:45 +0000
+ -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 27 Nov 2015 14:59:41 +0100
 
-base-files (7.2ubuntu9-galliumos3) vivid-galliumos; urgency=medium
+base-files (9.4ubuntu2) xenial; urgency=medium
 
-  * Update /etc/os-release for GalliumOS Beta 2
-  * Experimentally test /etc/lsb-release "DISTRIB_DESCRIPTION"
+  * Re-add a newline to /etc/issue.
 
- -- reynhout <reynhout@galliumos.org>  Sat, 06 Feb 2016 17:14:05 +0000
+ -- Matthias Klose <doko@ubuntu.com>  Fri, 23 Oct 2015 13:27:43 +0200
 
-base-files (7.2ubuntu9-galliumos2) vivid; urgency=medium
+base-files (9.4ubuntu1) xenial; urgency=medium
 
-  * /etc/issue{,.net} for GalliumOS Beta 2
+  * Merge with Debian; remaining changes:
+    - Branding changes.
+    - Add /etc/lsb-release file.
+    - Add lsb-release-udeb package.
+    - Various bashrc extensions.
+    - Do not install /usr/local dirs with staff group writeability, as there
+      are cases where somebody can become any user but root (like NFS).
+    - Update the motd upgrade handling to know about /etc/motd.tail.
+    - Add default /etc/networks file.
+    - Added information about the docs web page.
+    - Restore order line in /etc/host.conf with a comment.
+    - Add update-motd scripts.
 
- -- Hugh Greenberg <hugh@galliumos.org>  Fri, 5 Feb 2016 21:05:33 +0000
+ -- Matthias Klose <doko@ubuntu.com>  Thu, 22 Oct 2015 18:55:58 +0200
 
-base-files (7.2ubuntu9-galliumos1) vivid; urgency=medium
+base-files (9.4) unstable; urgency=medium
 
-  * Set package version to match provenance
+  * Fix two install_from_default() calls in postinst that were still
+    using the old calling convention, making debootstrap to fail.
+    Thanks to Steven Shiau for the report. Closes: #795952
 
- -- reynhout <reynhout@galliumos.org>  Sun, 10 Jan 2016 21:05:33 +0000
+ -- Santiago Vila <sanvila@debian.org>  Tue, 18 Aug 2015 12:06:00 +0200
 
-base-files (7.2ubuntu10) vivid; urgency=medium
+base-files (9.3) unstable; urgency=medium
 
-  * /etc/issue{,.net} for GalliumOS
+  * Change /usr/share/base-files/dot.profile (the default /root/.profile)
+    to not fail with new mesg behaviour in stretch. Closes: #794727.
+  * Add extra code in postinst so that people who never modified
+    their /root/.profile from jessie get the fixed version. This is
+    done by the update_to_current_default() function, which is now
+    more general and allows updating files not in /etc.
+  * While we are at it, modify install_from_default() function so that
+    it's called in the same simplified way as update_to_current_default().
 
- -- Hugh Greenberg <hugh@galliumos.org>  Mon, 26 Oct 2015 15:29:05 -0600
+ -- Santiago Vila <sanvila@debian.org>  Mon, 17 Aug 2015 17:50:38 +0200
+
+base-files (9.2) unstable; urgency=medium
+
+  * Create md5sums in a reproducible way.
+  * Use "dpkg-parsechangelog -S Date" to get the date.
+  * Allow building with umasks other than 022, as far as
+    they make a minimum of sense. Closes: #774498.
+
+ -- Santiago Vila <sanvila@debian.org>  Sun, 17 May 2015 14:44:10 +0200
+
+base-files (9.1) unstable; urgency=low
+
+  * Use gzip -n to stop recording current time in gzip headers.
+  * Fix mtimes before building the binary package.
+  * The package should now build reproducibly. Closes: #774498.
+    Thanks to Jérémy Bobbio <lunar@debian.org>.
+
+ -- Santiago Vila <sanvila@debian.org>  Fri, 15 May 2015 12:45:34 +0200
+
+base-files (9) unstable; urgency=medium
+
+  * Changed issue, issue.net, debian_version and os-release to read
+    "stretch/sid", and dropped VERSION and VERSION_ID from os-release.
+  * Changed HOME_URL and SUPPORT_URL is os-release from http to https,
+    as those are the preferred URLs now.
+
+ -- Santiago Vila <sanvila@debian.org>  Thu, 30 Apr 2015 12:00:50 +0200
+
+base-files (8) unstable; urgency=low
+
+  * Release for jessie as stable:
+  - Use "8" as version in /etc/issue and /etc/issue.net. As usual, this
+    is never expected to change once that jessie is released as Debian 8.
+  - Use 8.0 as version in /etc/debian_version. As usual, this is expected
+    to change at every point release.
+  - Changed PRETTY_NAME in /usr/lib/os-release, adding 8 as version number
+    and "(jessie)" as codename. Added also VERSION_ID and VERSION.
+    This file, /usr/lib/os-release, is not expected to change either.
+  - Updated README (jessie -> stretch).
+  * Packages are not expected to rely on the contents of any of these
+    files, but if they do, they might better break now while we can still
+    fix them.
+
+ -- Santiago Vila <sanvila@debian.org>  Sun, 30 Nov 2014 13:36:12 +0100
+
+base-files (7.10) unstable; urgency=low
+
+  * Dropped "chown root:root" lines in postinst, as they are
+    completely redundant. The postinst script is run by root.
+    This might also help as a workaround for Bug#766459.
+
+ -- Santiago Vila <sanvila@debian.org>  Mon, 27 Oct 2014 13:35:32 +0100
+
+base-files (7.9) unstable; urgency=low
+
+  * The change introduced in version 7.7 regarding /mnt seems to break
+    the ability of debootstrap currently in wheezy to create a sid chroot.
+    The case of initial install of /mnt is already handled by postinst line
+    "install_directory mnt 755 root" inside the big "if" block that
+    creates a bunch of other things, so we can restrict re-creating the /mnt
+    directory on upgrades to the case when we are really upgrading.
+    Therefore, the code is moved to the same "if" block where /etc/profile
+    and /etc/nsswitch.conf are upgraded to their new defaults when unchanged.
+    This might help as a workaround for Bug#766459.
+
+ -- Santiago Vila <sanvila@debian.org>  Mon, 27 Oct 2014 12:33:22 +0100
+
+base-files (7.8) unstable; urgency=low
+
+  * The /etc/profile.d mechanism may be used to override PS1 setting
+    in /etc/bash.bashrc, which is particularly nice because there is
+    no need to modify /etc/profile or /etc/bash.bashrc for that,
+    but this is no longer possible if /etc/profile.d is sourced
+    before /etc/bash.bashrc. Therefore, /etc/profile.d is sourced
+    after /etc/bash.bashrc again. Closes: #766351.
+
+ -- Santiago Vila <sanvila@debian.org>  Wed, 22 Oct 2014 16:10:30 +0200
+
+base-files (7.7) unstable; urgency=low
+
+  * Updated FAQ to explain that only /etc/debian_version is updated at
+    every point release, using Debian 8.x as an example, to be read by
+    users of jessie during its lifetime as stable. Closes: #621757.
+  * Changed default /etc/profile to source /etc/bash.bashrc after
+    processing profile.d stuff, not before. Closes: #698479.
+  * Drop comment lines about umask in /etc/profile, as it has been
+    there for enough time for everybody to take note.
+  * The directory /mnt is not included inside base-files.deb anymore.
+    Instead, it is created by postinst the very first time base-files
+    is installed (by debootstrap), or when upgrading from an earlier
+    base-files version. This should make the usual upgrade at every point
+    release to work even if /mnt is a stale mount point. Closes: #763405.
+
+ -- Santiago Vila <sanvila@debian.org>  Tue, 21 Oct 2014 21:20:14 +0200
+
+base-files (7.6) unstable; urgency=low
+
+  * By default, when the computer is booting, green and red colors are used
+    to signal that a service started successfully, or that it did not.
+    In this context, trying to use colors for something else might be
+    misleading or even confusing. For this reason, I'm dropping
+    ANSI_COLOR from /usr/lib/os-release. Closes: #758246.
+  * Clarified in the copyright file that the Artistic License currently
+    in common-licenses is actually the one coming from Perl. Closes: #764553.
+
+ -- Santiago Vila <sanvila@debian.org>  Thu, 09 Oct 2014 20:27:00 +0200
+
+base-files (7.5) unstable; urgency=medium
+
+  * Made /etc/os-release symlink to be relative, as an absolute symlink
+    seems to break boot when using a dracut initrd. Thanks to Daniel Schaal
+    for the report. Closes: #755394.
+
+ -- Santiago Vila <sanvila@debian.org>  Sun, 20 Jul 2014 12:10:26 +0200
+
+base-files (7.4) unstable; urgency=medium
+
+  * Updated FAQ to match current policy wording about common-licenses.
+    Thanks to Gioele Barabucci for the report. Closes: #723195.
+  * Moved /etc/os-release to /usr/lib/os-release. Put a symlink pointing to
+    the new place. Thanks to Marco d'Itri for the report. Closes: #753658.
+  * Changed BUG_REPORT_URL in os-release to https, as the BTS has moved.
+    Thanks to Martin Zobel-Helas for the report. Closes: #754455.
+
+ -- Santiago Vila <sanvila@debian.org>  Sat, 19 Jul 2014 18:00:08 +0200
+
+base-files (7.3) unstable; urgency=medium
+
+  * Added gshadow entry to default /etc/nsswitch.conf. Closes: #699090.
+  * Update /etc/nsswitch.conf if not modified by the user. Closes: #716786.
+  * Added nsswitch.conf.md5sums which works exactly like profile.md5sums.
+  * Changed debian/check-etc-profile-md5sum to debian/check-md5sum-etc.
+    This is now used twice in debian/rules, for profile and nsswitch.conf.
+  * Build package with -Zgzip to ease bootstrapping. Closes: #740278.
+  * Reformat paragraph in previous changelog to avoid too long lines.
+  * Added build-arch and build-indep targets to debian/rules.
+  * Standards-Version: 3.9.5 (no special changes for this).
+
+ -- Santiago Vila <sanvila@debian.org>  Sun, 04 May 2014 14:39:06 +0200
+
+base-files (7.2ubuntu11) wily; urgency=medium
+
+  * /etc/issue{,.net}, /etc/{lsb,os}-release: Prepare for 15.10 release.
+
+ -- Adam Conrad <adconrad@ubuntu.com>  Mon, 19 Oct 2015 09:54:15 +0100
+
+base-files (7.2ubuntu10) wily; urgency=medium
+
+  * /etc/issue{,.net}, /etc/{lsb,os}-release: Welcome to Wily Werewolf!
+
+ -- Adam Conrad <adconrad@ubuntu.com>  Mon, 04 May 2015 18:39:47 -0600
 
 base-files (7.2ubuntu9) vivid; urgency=medium
 
@@ -101,8 +272,8 @@ base-files (7.2ubuntu1) trusty; urgency=medium
 
 base-files (7.2) unstable; urgency=medium
 
-  * Changed issue, issue.net, debian_version and os-release to read "jessie/sid",
-    and dropped VERSION and VERSION_ID from os-release.
+  * Changed issue, issue.net, debian_version and os-release to read
+    "jessie/sid", and dropped VERSION and VERSION_ID from os-release.
 
  -- Santiago Vila <sanvila@debian.org>  Sun, 05 May 2013 18:19:00 +0200
 

@@ -3,7 +3,7 @@ Section: admin
 Priority: required
 Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
 XSBC-Original-Maintainer: Santiago Vila <sanvila@debian.org>
-Standards-Version: 3.9.1
+Standards-Version: 3.9.5
 
 Package: base-files
 Provides: base
