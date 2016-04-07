@@ -1,3 +1,9 @@
+base-files (9.4ubuntu3-galliumos2) xenon; urgency=medium
+
+  * update /etc files for GalliumOS 2.0
+
+ -- reynhout <reynhout@galliumos.org>  Thu, 07 Apr 2016 01:20:09 +0000
+
 base-files (9.4ubuntu3-galliumos1) xenial; urgency=medium
 
   * GalliumOS changes
