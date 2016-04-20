@@ -1,14 +1,8 @@
-base-files (9.4ubuntu3-galliumos2) xenon; urgency=medium
+base-files (9.4ubuntu4) xenial; urgency=medium
 
-  * update /etc files for GalliumOS 2.0
+  * /etc/issue{,.net}, /etc/{lsb,os}-release: Prepare for 16.04 release.
 
- -- reynhout <reynhout@galliumos.org>  Thu, 07 Apr 2016 01:20:09 +0000
-
-base-files (9.4ubuntu3-galliumos1) xenial; urgency=medium
-
-  * GalliumOS changes
-
- -- Hugh Greenberg <hugh@galliumos.org>  Wed, 2 Mar 2016 14:59:41 +0100
+ -- Adam Conrad <adconrad@ubuntu.com>  Tue, 12 Apr 2016 14:14:23 -0600
 
 base-files (9.4ubuntu3) xenial; urgency=medium
 
