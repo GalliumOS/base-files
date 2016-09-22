@@ -1,3 +1,13 @@
+base-files (9.4ubuntu4-galliumos3) xenon; urgency=medium
+
+  * add galliumos-lsb-release.diff
+    - updates /etc/lsb-release with full GalliumOS livery
+    - THIS IS EXPERIMENTAL
+      + might cause problems with third party installers that improperly
+        use /etc/lsb-release data (should use /etc/os-release)
+
+ -- reynhout <reynhout@galliumos.org>  Thu, 22 Sep 2016 18:04:24 +0000
+
 base-files (9.4ubuntu4-galliumos2) xenon; urgency=medium
 
   * update GalliumOS patch

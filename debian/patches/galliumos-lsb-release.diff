@@ -1,0 +1,10 @@
+--- a/etc/lsb-release
++++ b/etc/lsb-release
+@@ -1,4 +1,4 @@
+-DISTRIB_ID=Ubuntu
+-DISTRIB_RELEASE=16.04
+-DISTRIB_CODENAME=xenial
++DISTRIB_ID=GalliumOS
++DISTRIB_RELEASE=2.0
++DISTRIB_CODENAME=xenon
+ DISTRIB_DESCRIPTION="GalliumOS 2.0"
