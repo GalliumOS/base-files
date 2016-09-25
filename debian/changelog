@@ -1,3 +1,9 @@
+base-files (9.4ubuntu4-galliumos4) xenon; urgency=medium
+
+  * Revert experimental lsb-release change, bump version for proper updates
+
+ -- reynhout <reynhout@galliumos.org>  Sun, 25 Sep 2016 21:00:20 +0000
+
 base-files (9.4ubuntu4-galliumos3) xenon; urgency=medium
 
   * add galliumos-lsb-release.diff
