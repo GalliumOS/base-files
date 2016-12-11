@@ -1,33 +1,22 @@
-base-files (9.4ubuntu4-galliumos4) xenon; urgency=medium
+base-files (9.4ubuntu4.3) xenial; urgency=medium
 
-  * Revert experimental lsb-release change, bump version for proper updates
+  * /etc/os-release: Add VERSION_CODENAME per upstream spec (LP: #1598212)
 
- -- reynhout <reynhout@galliumos.org>  Sun, 25 Sep 2016 21:00:20 +0000
+ -- Adam Conrad <adconrad@ubuntu.com>  Fri, 12 Aug 2016 11:48:58 -0600
 
-base-files (9.4ubuntu4-galliumos3) xenon; urgency=medium
+base-files (9.4ubuntu4.2) xenial; urgency=medium
 
-  * add galliumos-lsb-release.diff
-    - updates /etc/lsb-release with full GalliumOS livery
-    - THIS IS EXPERIMENTAL
-      + might cause problems with third party installers that improperly
-        use /etc/lsb-release data (should use /etc/os-release)
+  * /etc/issue, /etc/issue.net, /etc/lsb-release, /etc/os-release: Bump
+    version number to 16.04.1 in preparation for the point release.
 
- -- reynhout <reynhout@galliumos.org>  Thu, 22 Sep 2016 18:04:24 +0000
+ -- Adam Conrad <adconrad@ubuntu.com>  Mon, 18 Jul 2016 08:34:38 -0600
 
-base-files (9.4ubuntu4-galliumos2) xenon; urgency=medium
+base-files (9.4ubuntu4.1) xenial-proposed; urgency=medium
 
-  * update GalliumOS patch
-    - modify /etc/os-release per man page description
+  * add links for obtaining management and support in 10-help-text and
+    fix the documentation link, LP: #1592386
 
- -- reynhout <reynhout@galliumos.org>  Thu, 21 Apr 2016 19:27:41 +0000
-
-base-files (9.4ubuntu4-galliumos1) xenon; urgency=medium
-
-  * Re-apply GalliumOS patches
-    - /etc/issue{,.net}, /etc/{lsb,os}-release: set for GalliumOS
-    - add debian/galliumos/upstream
-
- -- reynhout <reynhout@galliumos.org>  Wed, 20 Apr 2016 21:46:37 +0000
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 14 Jun 2016 15:08:49 +0300
 
 base-files (9.4ubuntu4) xenial; urgency=medium
 
