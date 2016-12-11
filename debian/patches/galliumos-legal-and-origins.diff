@@ -1,0 +1,26 @@
+diff --git a/etc/legal b/etc/legal
+index cf276aa..2f93d3d 100644
+--- a/etc/legal
++++ b/etc/legal
+@@ -1,8 +1,8 @@
+ 
+-The programs included with the Ubuntu system are free software;
++The programs included with the GalliumOS system are free software;
+ the exact distribution terms for each program are described in the
+ individual files in /usr/share/doc/*/copyright.
+ 
+-Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+-applicable law.
++GalliumOS comes with ABSOLUTELY NO WARRANTY, to the extent permitted
++by applicable law.
+ 
+diff --git a/origins/galliumos b/origins/galliumos
+new file mode 100644
+index 0000000..2045791
+--- /dev/null
++++ b/origins/galliumos
+@@ -0,0 +1,4 @@
++Vendor: GalliumOS
++Vendor-URL: https://galliumos.org/
++Bugs: https://github.com/GalliumOS/galliumos-distro/issues
++Parent: Ubuntu
