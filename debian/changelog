@@ -1,3 +1,9 @@
+base-files (9.4ubuntu4.3-galliumos2) xenon; urgency=medium
+
+  * Update lsb_release, leaving codename intact this time
+
+ -- reynhout <reynhout@galliumos.org>  Mon, 02 Jan 2017 01:30:34 +0000
+
 base-files (9.4ubuntu4.3-galliumos1) xenon; urgency=medium
 
   * Add GalliumOS patches
