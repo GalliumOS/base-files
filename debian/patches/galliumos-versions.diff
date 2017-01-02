@@ -41,7 +41,7 @@ index 6f57bfa..93088bd 100644
 -BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
 -VERSION_CODENAME=xenial
 +NAME="GalliumOS"
-+VERSION="2.1 (Xenon)
++VERSION="2.1 (Xenon)"
 +ID=galliumos
 +ID_LIKE="ubuntu debian"
 +PRETTY_NAME="GalliumOS 2.1"
