@@ -1,3 +1,9 @@
+base-files (9.4ubuntu4.3-galliumos4) xenon; urgency=medium
+
+  * Revert lsb_release change, restore all but DISTRIB_DESCRIPTION
+
+ -- reynhout <reynhout@galliumos.org>  Wed, 18 Jan 2017 22:31:22 +0000
+
 base-files (9.4ubuntu4.3-galliumos3) xenon; urgency=medium
 
   * Added missing closing quote

@@ -14,14 +14,12 @@ index f380629..8bfbcbf 100644
 -Ubuntu 16.04.1 LTS
 +GalliumOS 2.1
 diff --git a/etc/lsb-release b/etc/lsb-release
-index c4b5944..ec6e4c0 100644
+index c4b5944..c7e400b 100644
 --- a/etc/lsb-release
 +++ b/etc/lsb-release
 @@ -1,4 +1,4 @@
--DISTRIB_ID=Ubuntu
--DISTRIB_RELEASE=16.04
-+DISTRIB_ID=GalliumOS
-+DISTRIB_RELEASE=2.1
+ DISTRIB_ID=Ubuntu
+ DISTRIB_RELEASE=16.04
  DISTRIB_CODENAME=xenial
 -DISTRIB_DESCRIPTION="Ubuntu 16.04.1 LTS"
 +DISTRIB_DESCRIPTION="GalliumOS 2.1"
