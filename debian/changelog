@@ -1,3 +1,10 @@
+base-files (9.4ubuntu4.3-galliumos5) xenon; urgency=medium
+
+  * Update motd fragment in debian dir
+    - diff included for convenience, not applied by dpkg scripts
+
+ -- reynhout <reynhout@galliumos.org>  Sun, 22 Jan 2017 20:50:37 +0000
+
 base-files (9.4ubuntu4.3-galliumos4) xenon; urgency=medium
 
   * Revert lsb_release change, restore all but DISTRIB_DESCRIPTION

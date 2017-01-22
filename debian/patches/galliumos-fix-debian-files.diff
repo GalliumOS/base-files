@@ -1,0 +1,13 @@
+diff --git a/debian/update-motd.d/10-help-text b/debian/update-motd.d/10-help-text
+index 47f02b7..f535be0 100644
+--- a/debian/update-motd.d/10-help-text
++++ b/debian/update-motd.d/10-help-text
+@@ -21,6 +21,5 @@
+ #    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ 
+ printf "\n"
+-printf " * Documentation:  https://help.ubuntu.com\n"
+-printf " * Management:     https://landscape.canonical.com\n"
+-printf " * Support:        https://ubuntu.com/advantage\n"
++printf " * Documentation:  https://wiki.galliumos.org/\n"
++printf " * Support:        https://reddit.com/r/GalliumOS\n"
