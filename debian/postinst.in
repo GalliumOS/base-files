@@ -47,7 +47,6 @@ if [ ! -e /etc/dpkg/origins/default ]; then
 fi
 
 if [ "$1" = "configure" ] && [ "$2" = "" ]; then
-  install_from_default nsswitch.conf /etc/nsswitch.conf
   install_from_default dot.profile   /root/.profile
   install_from_default dot.bashrc    /root/.bashrc
   install_from_default profile       /etc/profile
@@ -120,9 +119,10 @@ if [ "$1" = "configure" ] && [ "$2" != "" ]; then
   fi
 
   update_to_current_default profile       /etc/profile
-  update_to_current_default nsswitch.conf /etc/nsswitch.conf
   update_to_current_default dot.profile   /root/.profile
   if dpkg --compare-versions "$2" lt-nl "7.7"; then
     install_directory mnt 755 root
   fi
 fi
+
+#DEBHELPER#
