@@ -1,51 +1,52 @@
 diff --git a/etc/issue b/etc/issue
-index 3edf414..31c4e03 100644
+index ee00925..7b57cf2 100644
 --- a/etc/issue
 +++ b/etc/issue
 @@ -1,2 +1,2 @@
--Ubuntu 16.04.1 LTS \n \l
-+GalliumOS 2.1 \n \l
+-Ubuntu 18.04 LTS \n \l
++GalliumOS 3.0 \n \l
  
 diff --git a/etc/issue.net b/etc/issue.net
-index f380629..8bfbcbf 100644
+index 91aeeb9..7b7c30c 100644
 --- a/etc/issue.net
 +++ b/etc/issue.net
 @@ -1 +1 @@
--Ubuntu 16.04.1 LTS
-+GalliumOS 2.1
+-Ubuntu 18.04 LTS
++GalliumOS 3.0
 diff --git a/etc/lsb-release b/etc/lsb-release
-index c4b5944..c7e400b 100644
+index 96aa62f..046e059 100644
 --- a/etc/lsb-release
 +++ b/etc/lsb-release
 @@ -1,4 +1,4 @@
  DISTRIB_ID=Ubuntu
- DISTRIB_RELEASE=16.04
- DISTRIB_CODENAME=xenial
--DISTRIB_DESCRIPTION="Ubuntu 16.04.1 LTS"
-+DISTRIB_DESCRIPTION="GalliumOS 2.1"
+ DISTRIB_RELEASE=18.04
+ DISTRIB_CODENAME=bionic
+-DISTRIB_DESCRIPTION="Ubuntu 18.04 LTS"
++DISTRIB_DESCRIPTION="GalliumOS 3.0"
 diff --git a/etc/os-release b/etc/os-release
-index 6f57bfa..93088bd 100644
+index ee61310..eaf41e3 100644
 --- a/etc/os-release
 +++ b/etc/os-release
-@@ -1,11 +1,11 @@
+@@ -1,12 +1,11 @@
 -NAME="Ubuntu"
--VERSION="16.04.1 LTS (Xenial Xerus)"
+-VERSION="18.04 LTS (Bionic Beaver)"
 -ID=ubuntu
 -ID_LIKE=debian
--PRETTY_NAME="Ubuntu 16.04.1 LTS"
--VERSION_ID="16.04"
--HOME_URL="http://www.ubuntu.com/"
--SUPPORT_URL="http://help.ubuntu.com/"
--BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
--VERSION_CODENAME=xenial
+-PRETTY_NAME="Ubuntu 18.04 LTS"
+-VERSION_ID="18.04"
+-HOME_URL="https://www.ubuntu.com/"
+-SUPPORT_URL="https://help.ubuntu.com/"
+-BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+-PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+-VERSION_CODENAME=bionic
 +NAME="GalliumOS"
-+VERSION="2.1 (Xenon)"
++VERSION="3.0 (Bismuth)"
 +ID=galliumos
 +ID_LIKE="ubuntu debian"
-+PRETTY_NAME="GalliumOS 2.1"
-+VERSION_ID="2.1"
++PRETTY_NAME="GalliumOS 3.0"
++VERSION_ID="3.0"
 +HOME_URL="https://galliumos.org/"
 +SUPPORT_URL="https://galliumos.org/"
-+BUG_REPORT_URL="https://github.com/GalliumOS/galliumos-distro/issues"
-+VERSION_CODENAME=xenon
- UBUNTU_CODENAME=xenial
++BUG_REPORT_URL="https://https://github.com/GalliumOS/galliumos-distro/issues"
++VERSION_CODENAME=bismuth
+ UBUNTU_CODENAME=bionic

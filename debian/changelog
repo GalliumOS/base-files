@@ -1,3 +1,9 @@
+base-files (10.1ubuntu2-galliumos1) bismuth; urgency=medium
+
+  * Updates for GalliumOS 3.0
+
+ -- reynhout <reynhout@galliumos.org>  Wed, 02 May 2018 01:51:43 +0000
+
 base-files (10.1ubuntu2) bionic; urgency=medium
 
   * /etc/issue{,.net}, /etc/{lsb,os}-release: Prepare for 18.04 release.
