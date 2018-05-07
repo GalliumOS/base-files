@@ -1,6 +1,6 @@
-base-files (10.1ubuntu2-galliumos1) bismuth; urgency=medium
+base-files (10.1ubuntu2-galliumos0) bismuth; urgency=medium
 
-  * Updates for GalliumOS 3.0
+  * Prepare for GalliumOS 3.0
 
  -- reynhout <reynhout@galliumos.org>  Wed, 02 May 2018 01:51:43 +0000
 
