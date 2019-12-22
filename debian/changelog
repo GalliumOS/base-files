@@ -1,3 +1,9 @@
+base-files (10.1ubuntu2-galliumos2) bismuth; urgency=medium
+
+  * Prepare for GalliumOS 3.1
+
+ -- reynhout <reynhout@galliumos.org>  Sun, 22 Dec 2019 20:00:27 +0000
+
 base-files (10.1ubuntu2-galliumos1) bismuth; urgency=medium
 
   * Prepare for GalliumOS 3.0
